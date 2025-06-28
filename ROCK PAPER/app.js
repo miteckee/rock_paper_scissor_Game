@@ -3,6 +3,8 @@ let botScore = 0;
 
 const choices = document.querySelectorAll(".choice");
 const msg = document.querySelector("#msg");
+const userScorePara = document.querySelector('#user_score');
+const botScorePara = document.querySelector('#bot_score');
 
 const genBotChoice = () =>{
     let options = ["rock", "paper", "scissors"];
@@ -15,13 +17,19 @@ const drawgame = () => {
     msg.innerText = "Game Draw";
 }
 
-const showWinner = (userWin) => {
+const showWinner = (userWin, Userchoice, compChoice) => {
     if(userWin){
+        userScore++;
+        userScorePara.innerText = userScore;
         console.log("you win!");
-        msg.innerText = "You Win";
+        msg.innerText = `You Win ${Userchoice} beats ${compChoice}` ;
+        msg.style.backgroundColor = "green";
     }else {
         console.log("you lose");
-        msg.innerText = "You Lose";
+        botScore++;
+        botScorePara.innerText = botScore;
+        msg.innerText = `You Lose ${compChoice} beats ${Userchoice} `;
+        msg.style.backgroundColor = "Red";
     }
 };
 
@@ -41,7 +49,7 @@ const playGame = (Userchoice) => {
         }else{
             userWin = compChoice === "rock" ? false : true;
         }
-        showWinner(userWin);
+        showWinner(userWin, Userchoice, compChoice);
      }
 };
 
