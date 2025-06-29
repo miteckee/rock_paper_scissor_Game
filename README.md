@@ -1,0 +1,1 @@
+This is a simple web-based Rock-Paper-Scissors game where users can play against a computer. The game is built using HTML for structure, CSS for styling, and JavaScript for game logic and interactivity.
