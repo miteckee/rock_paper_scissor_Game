@@ -15,6 +15,7 @@ const genBotChoice = () =>{
 const drawgame = () => {
     console.log ("game was Draw");
     msg.innerText = "Game Draw";
+    msg.style.backgroundColor = "grey";
 }
 
 const showWinner = (userWin, Userchoice, compChoice) => {
